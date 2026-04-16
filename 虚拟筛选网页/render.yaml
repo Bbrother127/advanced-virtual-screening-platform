@@ -1,0 +1,44 @@
+# Render deployment configuration
+name: anxa1-virtual-screening
+type: web
+buildCommand: bash build.sh
+startCommand: gunicorn app:app
+env:
+  - key: FLASK_ENV
+    value: production
+  - key: PORT
+    value: $PORT
+runtime: python
+runtimeVersion: '3.11'
+instanceCount: 1
+disk: 512
+memory: 1024
+healthCheck:
+  path: /
+  intervalSeconds: 30
+  timeoutSeconds: 5
+  successStatuses: [200, 302]
+  failedStatuses: [500, 502, 503, 504]
+  gracePeriodSeconds: 30
+service:
+  name: anxa1-virtual-screening
+  type: web
+  region: us-east-1
+  env: python
+  runtimeVersion: '3.11'
+  instanceCount: 1
+  disk: 512
+  memory: 1024
+  healthCheck:
+    path: /
+    intervalSeconds: 30
+    timeoutSeconds: 5
+    successStatuses: [200, 302]
+    failedStatuses: [500, 502, 503, 504]
+    gracePeriodSeconds: 30
+  autoDeploy:
+    git:
+      provider: github
+      owner: your_github_username
+      repo: anxa1-virtual-screening
+      branch: main
