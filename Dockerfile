@@ -21,7 +21,7 @@ COPY . .
 RUN mkdir -p static/uploads
 
 # 暴露端口
-EXPOSE 5000
+EXPOSE 8080
 
 # 使用完整路径运行 gunicorn
-CMD ["python", "-m", "gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "2"]
+CMD ["python", "-m", "gunicorn", "app:app", "--bind", "0.0.0.0:8080", "--workers", "2"]
