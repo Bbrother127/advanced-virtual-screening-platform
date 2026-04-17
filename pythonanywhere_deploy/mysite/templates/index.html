@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级虚拟筛选平台：机器学习驱动的药物发现引擎</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🧬 高级虚拟筛选平台：机器学习驱动的药物发现引擎</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#about">平台介绍</a></li>
+                <li><a href="#workflow">工作流程</a></li>
+                <li><a href="#features">功能模块</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>高级虚拟筛选平台：机器学习驱动的药物发现引擎</h1>
+            <p>基于机器学习的药物虚拟筛选系统</p>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-number">6</span><span class="stat-label">机器学习模型</span></div>
+                <div class="stat"><span class="stat-number">10+</span><span class="stat-label">分子描述符</span></div>
+                <div class="stat"><span class="stat-number">70K+</span><span class="stat-label">化合物筛选</span></div>
+            </div>
+            <button class="btn-primary" onclick="scrollToSection('workflow')">开始分析</button>
+        </div>
+    </section>
+
+    <!-- 平台介绍区 - 2x3卡片布局 -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">平台介绍</h2>
+        <div class="platform-intro">
+            <div class="platform-card">
+                <div class="icon">🎯</div>
+                <h3>多算法融合架构</h3>
+                <p>创新性构建六模型并行训练框架：传统机器学习三剑客(SVM/LR/KNN)、集成与降维算法(RF/PLS-DA)、深度学习模块(DFNN)，采用复合评分算法自动选择最优模型</p>
+            </div>
+            <div class="platform-card">
+                <div class="icon">⚡</div>
+                <h3>智能特征工程</h3>
+                <p>内置化学信息学引擎，自动从SMILES字符串提取10个关键分子描述符，通过标准化处理和特征优化，将复杂化学结构转化为机器学习可理解的高维特征空间</p>
+            </div>
+            <div class="platform-card">
+                <div class="icon">📊</div>
+                <h3>科学评估体系</h3>
+                <p>建立三维度评估框架：分类性能(Accuracy/F1)、排序能力(AUC-ROC/AUPRC)、计算效率(训练时间/内存占用)，确保区分能力与分类精度间的最优平衡</p>
+            </div>
+            <div class="platform-card">
+                <div class="icon">🔬</div>
+                <h3>天然产物挖掘</h3>
+                <p>专门优化的黄酮类识别算法，为植物源药物开发提供强大支持，从海量天然产物数据库中快速识别具有潜在活性的化合物</p>
+            </div>
+            <div class="platform-card">
+                <div class="icon">🚀</div>
+                <h3>全流程自动化</h3>
+                <p>实现从原始数据到筛选结果的一站式处理：SMILES标准化→描述符计算→特征优化→模型训练→性能评估→数据库筛选→结果分析，将传统数周任务缩短至数小时</p>
+            </div>
+            <div class="platform-card">
+                <div class="icon">💎</div>
+                <h3>科学价值与应用</h3>
+                <p>显著提升药物发现效率，通过虚拟筛选替代部分湿实验，将先导化合物发现时间从数月缩短至数天；为计算药物发现领域提供标准化分析框架和可比较评估体系</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 完整工作流程 - 2行4列布局 -->
+<section id="workflow" class="section workflow-section">
+    <div class="workflow-container">
+        <h2 class="section-title">完整工作流程</h2>
+        <div class="workflow-grid">
+            <div class="workflow-step">
+                <div class="step-number">0</div>
+                <div class="step-content">
+                    <h4>数据准备</h4>
+                    <p>训练数据：mydata.csv（含SMILES和Labels列）<br>筛选数据库：database.csv（含SMILES列）</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>SMILES标准化</h4>
+                    <p>输入分子SMILES结构</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>描述符计算</h4>
+                    <p>生成10个分子描述符</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>特征优化</h4>
+                    <p>数据标准化处理</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>模型训练</h4>
+                    <p>6种机器学习模型</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>性能评估</h4>
+                    <p>多指标对比分析</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h4>数据库筛选</h4>
+                    <p>大规模化合物筛选</p>
+                </div>
+            </div>
+            <div class="workflow-step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h4>结果分析</h4>
+                    <p>黄酮类化合物识别</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 使用说明区 -->
+<section id="usage" class="section usage-section">
+    <div class="usage-container">
+        <h2 class="section-title">使用说明</h2>
+        <div class="usage-cards">
+            <div class="usage-card">
+                <h3><span class="icon">📋</span>数据格式要求</h3>
+                <ul>
+                    <li>训练数据：mydata.csv，必须包含"SMILES"和"Labels"两列</li>
+                    <li>筛选数据库：database.csv，必须包含"SMILES"列</li>
+                    <li>Labels列：0表示非活性，1表示活性</li>
+                    <li>SMILES格式：标准SMILES字符串</li>
+                </ul>
+            </div>
+            <div class="usage-card">
+                <h3><span class="icon">📁</span>文件上传说明</h3>
+                <ul>
+                    <li>先上传训练数据，系统自动训练6种模型并选择最优</li>
+                    <li>训练完成后，再上传待筛选数据库</li>
+                    <li>支持CSV格式，文件大小建议不超过100MB</li>
+                    <li>上传后系统自动处理，无需手动操作</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">功能模块</h2>
+            
+            <!-- 数据上传模块 -->
+            <div class="feature-module" id="module-1">
+                <div class="module-header"><h3>📁 数据上传与预处理</h3></div>
+                <div class="module-content">
+                    <div class="upload-section">
+                        <h4>上传训练数据 (mydata.csv)</h4>
+                        <p class="hint">包含SMILES和Labels列的CSV文件</p>
+                        <input type="file" id="training-file" accept=".csv">
+                        <button class="btn-primary" onclick="uploadTrainingData()">上传并训练模型</button>
+                        <div id="training-status" class="status"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模型训练结果模块 -->
+            <div class="feature-module" id="module-2" style="display:none;">
+                <div class="module-header"><h3>📈 模型训练与评估</h3></div>
+                <div class="module-content">
+                    <div class="results-summary">
+                        <div class="best-model-badge"><span>最佳模型: </span><span id="best-model-name" class="highlight">-</span></div>
+                    </div>
+                    <div class="download-buttons">
+                        <button class="btn-small" onclick="downloadFile('model_comparison_table.csv')">📥 对比表</button>
+                        <button class="btn-small" onclick="downloadFile('model_comparison_detailed.csv')">📥 详细结果</button>
+                    </div>
+                    <div class="model-comparison-table">
+                        <table id="model-table">
+                            <thead><tr><th>模型</th><th>准确率</th><th>精确率</th><th>召回率</th><th>F1分数</th><th>AUC-ROC</th><th>AUPRC</th></tr></thead>
+                            <tbody id="model-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 单模型详细分析图表（每个模型2x2布局） -->
+            <div class="charts-section" id="charts-section-1" style="display:none;">
+                <h3 class="chart-section-title">📊 单模型详细分析 (每个模型2×2布局)</h3>
+                
+                <!-- SVM 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>SVM 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="svm-metrics"></div>
+                        <div class="chart-cell" id="svm-roc"></div>
+                        <div class="chart-cell" id="svm-cm"></div>
+                        <div class="chart-cell" id="svm-time"></div>
+                    </div>
+                </div>
+                
+                <!-- LR 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>LR 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="lr-metrics"></div>
+                        <div class="chart-cell" id="lr-roc"></div>
+                        <div class="chart-cell" id="lr-cm"></div>
+                        <div class="chart-cell" id="lr-time"></div>
+                    </div>
+                </div>
+                
+                <!-- KNN 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>KNN 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="knn-metrics"></div>
+                        <div class="chart-cell" id="knn-roc"></div>
+                        <div class="chart-cell" id="knn-cm"></div>
+                        <div class="chart-cell" id="knn-time"></div>
+                    </div>
+                </div>
+                
+                <!-- RF 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>RF 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="rf-metrics"></div>
+                        <div class="chart-cell" id="rf-roc"></div>
+                        <div class="chart-cell" id="rf-cm"></div>
+                        <div class="chart-cell" id="rf-time"></div>
+                    </div>
+                </div>
+                
+                <!-- PLS-DA 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>PLS-DA 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="plsda-metrics"></div>
+                        <div class="chart-cell" id="plsda-roc"></div>
+                        <div class="chart-cell" id="plsda-cm"></div>
+                        <div class="chart-cell" id="plsda-time"></div>
+                    </div>
+                </div>
+                
+                <!-- DFNN 2x2 -->
+                <div class="model-2x2-box">
+                    <h4>DFNN 模型详细分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="dfnn-metrics"></div>
+                        <div class="chart-cell" id="dfnn-roc"></div>
+                        <div class="chart-cell" id="dfnn-cm"></div>
+                        <div class="chart-cell" id="dfnn-time"></div>
+                    </div>
+                </div>
+                
+                <!-- 模型性能综合对比 -->
+                <h3 class="chart-section-title">📈 模型性能综合对比</h3>
+                <div class="chart-row">
+                    <div class="chart-container" id="model-performance-chart"></div>
+                    <div class="chart-container" id="roc-comparison-chart"></div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-container" id="radar-chart"></div>
+                    <div class="chart-container" id="training-time-chart"></div>
+                </div>
+            </div>
+
+            <!-- 数据库筛选模块 -->
+            <div class="feature-module" id="module-3" style="display:none;">
+                <div class="module-header"><h3>🗄️ 数据库筛选</h3></div>
+                <div class="module-content">
+                    <div class="upload-section">
+                        <h4>上传待筛选数据库 (database.csv)</h4>
+                        <p class="hint">包含SMILES列的CSV文件</p>
+                        <input type="file" id="database-file" accept=".csv">
+                        <button class="btn-primary" onclick="uploadDatabase()">开始筛选</button>
+                        <div id="screening-status" class="status"></div>
+                    </div>
+                    <div id="screening-results" style="display:none;">
+                        <div class="download-buttons">
+                            <button class="btn-small" onclick="downloadFile('database_screening_results.csv')">📥 全部结果</button>
+                            <button class="btn-small" onclick="downloadFile('database_screening_top_100.csv')">📥 Top100</button>
+                            <button class="btn-small" onclick="downloadFile('flavonoid_compounds_top_50.csv')">📥 黄酮类</button>
+                        </div>
+                        <div class="screening-stats">
+                            <div class="stat-card"><div class="stat-value" id="total-compounds">-</div><div class="stat-label">总化合物数</div></div>
+                            <div class="stat-card"><div class="stat-value" id="active-compounds">-</div><div class="stat-label">活性化合物</div></div>
+                            <div class="stat-card"><div class="stat-value" id="inactive-compounds">-</div><div class="stat-label">非活性化合物</div></div>
+                            <div class="stat-card"><div class="stat-value" id="flavonoid-count">-</div><div class="stat-label">黄酮类(Top50)</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 筛选结果分析（2x2布局） -->
+            <div class="charts-section" id="charts-section-2" style="display:none;">
+                <h3 class="chart-section-title">🔬 筛选结果可视化分析 (2x2布局)</h3>
+                <div class="model-2x2-box">
+                    <h4>筛选结果统计分析</h4>
+                    <div class="chart-2x2-grid">
+                        <div class="chart-cell" id="screen-pie"></div>
+                        <div class="chart-cell" id="screen-hist"></div>
+                        <div class="chart-cell" id="screen-rank"></div>
+                        <div class="chart-cell" id="screen-flav"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-module">
+                <button class="btn-secondary" onclick="resetSystem()">🔄 重置系统</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 高级虚拟筛选平台 | 机器学习驱动的药物发现引擎</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
