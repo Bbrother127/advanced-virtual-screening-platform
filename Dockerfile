@@ -1,4 +1,4 @@
-FROM mcs07/rdkit:2024.03.1
+FROM informaticsmatters/rdkit-python3-debian:Release_2024_09
 
 WORKDIR /app
 
