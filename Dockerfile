@@ -1,31 +1,16 @@
-# 使用完整的 Python 镜像以避免 RDKit 依赖问题
-FROM python:3.11
+FROM mcs07/rdkit:2024.03.1
 
-# 设置工作目录
 WORKDIR /app
 
-# 安装系统依赖（RDKit 需要）
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    cmake \
-    libboost-all-dev \
-    librdkit-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir Flask==2.3.2 gunicorn==21.2.0 werkzeug==2.3.2
 
-# 复制依赖文件
 COPY requirements.txt .
+RUN pip install --no-cache-dir numpy==1.24.3 pandas==2.0.3 scikit-learn==1.3.0 joblib==1.3.1 matplotlib==3.7.2 seaborn==0.12.2 || true
 
-# 安装 Python 依赖
-RUN pip install --no-cache-dir -r requirements.txt
-
-# 复制应用代码
 COPY . .
 
-# 创建上传目录
 RUN mkdir -p static/uploads
 
-# 暴露端口
 EXPOSE 5000
 
-# 使用 gunicorn 运行应用
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "2", "--timeout", "120"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:5000", "--workers", "2"]
