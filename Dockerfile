@@ -2,10 +2,10 @@ FROM informaticsmatters/rdkit-python3-debian:Release_2024_09
 
 WORKDIR /app
 
-RUN pip install --no-cache-dir Flask==2.3.2 gunicorn==21.2.0 werkzeug==2.3.2
+RUN pip install --no-cache-dir --break-system-packages Flask==2.3.2 gunicorn==21.2.0 werkzeug==2.3.2
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir numpy==1.24.3 pandas==2.0.3 scikit-learn==1.3.0 joblib==1.3.1 matplotlib==3.7.2 seaborn==0.12.2 || true
+RUN pip install --no-cache-dir --break-system-packages numpy==1.24.3 pandas==2.0.3 scikit-learn==1.3.0 joblib==1.3.1 matplotlib==3.7.2 seaborn==0.12.2 || true
 
 COPY . .
 
