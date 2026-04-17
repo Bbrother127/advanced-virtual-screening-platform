@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.env
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (local test data, not needed for deployment)
+测试/
+*.csv
+*.xlsx
+*.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+__pycache__/
+.huml/.idea/
+
+# Render deployment (optional)
+render.yaml
+
+# Local uploads (not needed for deployment)
+static/uploads/*.csv
